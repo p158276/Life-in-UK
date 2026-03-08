@@ -157,6 +157,30 @@ export const sections: Section[] = [
         wrongAnswer: 'The Magna Carta (instead of Domesday Book)',
         explanation: '威廉一世時期的兩個重要記錄是 Domesday Book 和 Bayeux Tapestry，不是 Magna Carta。',
       },
+      {
+        question: 'Which was a crucial aerial battle fought between Germany and Britain during WWII?',
+        correctAnswer: 'The Battle of Britain',
+        wrongAnswer: 'The Battle of Worcester',
+        explanation: '不列顛之戰 Battle of Britain 是二戰中英德之間的關鍵空戰，不是 Battle of Worcester。',
+      },
+      {
+        question: 'Which two languages combined to become one English language?',
+        correctAnswer: 'Norman French + Anglo-Saxon',
+        wrongAnswer: 'Latin + Anglo-Saxon',
+        explanation: '諾曼征服後，Norman French（貴族語言）和 Anglo-Saxon（平民語言）合併成英語。',
+      },
+      {
+        question: 'Which Scottish king defeated the English at the Battle of Bannockburn?',
+        correctAnswer: 'Robert the Bruce',
+        wrongAnswer: 'King James I',
+        explanation: '1314 年 Robert the Bruce 在班諾克本戰役中打敗英格蘭，不是 King James I。',
+      },
+      {
+        question: 'What did the Butler Act introduce in 1944?',
+        correctAnswer: 'Free secondary education in England and Wales',
+        wrongAnswer: 'Free primary education in England, Wales and Scotland',
+        explanation: 'Butler Act 1944 引入的是英格蘭和威爾士的免費中等教育 secondary education，不是初等教育，也不包括蘇格蘭。',
+      },
     ],
     blocks: [
       {
@@ -336,6 +360,12 @@ export const sections: Section[] = [
         wrongAnswer: 'Henry VIII 亨利八世',
         explanation: '殖民北美東海岸時的在位君主是伊麗莎白一世，不是亨利八世。',
       },
+      {
+        question: 'The version of the Bible created by King James I is known as:',
+        correctAnswer: 'The Authorised Version',
+        wrongAnswer: 'The Reformed Version',
+        explanation: 'King James 聖經 = King James Version = Authorised Version，不是 Reformed Version。',
+      },
     ],
     blocks: [
       {
@@ -421,6 +451,12 @@ export const sections: Section[] = [
         correctAnswer: 'False — Wales 沒有國教',
         wrongAnswer: 'True',
         explanation: 'Wales 和 Northern Ireland 都沒有自己的國教（established church）。',
+      },
+      {
+        question: 'In 1560, the Scottish Parliament established what type of church?',
+        correctAnswer: 'A Protestant church (Presbyterian)',
+        wrongAnswer: 'A Catholic church',
+        explanation: '1560 年蘇格蘭議會建立的是新教 Protestant 教會（長老教會 Presbyterian），不是天主教 Catholic。',
       },
     ],
     blocks: [
@@ -590,6 +626,12 @@ export const sections: Section[] = [
         wrongAnswer: 'Radio 收音機',
         explanation: 'John Logie Baird 發明的是電視 Television，不是收音機 Radio。',
       },
+      {
+        question: 'What is Isaac Newton famous for?',
+        correctAnswer: 'Discovering gravity 發現萬有引力',
+        wrongAnswer: 'Inventing the telephone',
+        explanation: 'Isaac Newton 是科學家，以發現萬有引力（gravity）聞名。',
+      },
     ],
     blocks: [
       {
@@ -688,6 +730,18 @@ export const sections: Section[] = [
         explanation: 'Baroness Tanni Grey-Thompson 和 Ellie Simmonds 是殘奧會運動員。Dame Kelly Holmes 是奧運會選手，不是殘奧會！',
         timesWrong: 2,
       },
+      {
+        question: 'Where is the Scottish Grand National held?',
+        correctAnswer: 'Ayr',
+        wrongAnswer: 'Edinburgh',
+        explanation: 'Scottish Grand National 在 Ayr 舉行，不是 Edinburgh。',
+      },
+      {
+        question: 'Where is Mary Peters from?',
+        correctAnswer: 'Northern Ireland 北愛爾蘭',
+        wrongAnswer: 'England',
+        explanation: 'Mary Peters 是北愛爾蘭運動員，不是英格蘭。',
+      },
     ],
     blocks: [
       {
@@ -764,6 +818,18 @@ export const sections: Section[] = [
         correctAnswer: 'Lake District (Wastwater)',
         wrongAnswer: 'Big Ben',
         explanation: '2007 年 Wastwater（湖區）被票選為英國最佳景觀，不是 Big Ben。',
+      },
+      {
+        question: 'Where is the Lake District located?',
+        correctAnswer: 'England',
+        wrongAnswer: 'Wales',
+        explanation: 'Lake District 湖區位於 England，不是 Wales。它是英格蘭最大的國家公園。',
+      },
+      {
+        question: 'What sport is played at Lord\'s Cricket Ground?',
+        correctAnswer: 'Cricket 板球',
+        wrongAnswer: 'Football 足球',
+        explanation: 'Lord\'s 是板球場（Cricket Ground），不是足球場，位於倫敦。',
       },
     ],
     blocks: [
@@ -952,6 +1018,54 @@ export const sections: Section[] = [
         wrongAnswer: 'Ask your employer to get it for you',
         explanation: '申請 National Insurance Number 需要自己聯繫 DWP（Department for Work and Pensions），不是讓雇主幫你辦。',
       },
+      {
+        question: 'How can you complain about the police? Who do you write to?',
+        correctAnswer: 'Write to the Chief Constable',
+        wrongAnswer: 'Write to your local MP',
+        explanation: '投訴警察應該寫信給 Chief Constable，不是寫給 MP 議員。',
+      },
+      {
+        question: 'How are civil servants chosen in the UK?',
+        correctAnswer: 'Chosen on merit and are politically neutral',
+        wrongAnswer: 'Chosen by political parties',
+        explanation: '英國公務員擇優錄取（chosen on merit）且政治中立（politically neutral），不屬於任何政黨。',
+      },
+      {
+        question: 'How are towns and cities in the UK governed?',
+        correctAnswer: 'By democratically elected councils',
+        wrongAnswer: 'By government-appointed officials',
+        explanation: '英國城鎮由民選議會（democratically elected councils）管理，不是政府任命的官員。',
+      },
+      {
+        question: 'What is the Union Jack?',
+        correctAnswer: 'The flag of the United Kingdom 英國國旗',
+        wrongAnswer: 'A trade union 工會',
+        explanation: 'Union Jack 是英國國旗，不是工會 trade union。',
+      },
+      {
+        question: 'What is the largest denomination banknote in the UK?',
+        correctAnswer: '£50',
+        wrongAnswer: '£100',
+        explanation: '英國最大面值紙幣是 £50，沒有 £100 紙幣。',
+      },
+      {
+        question: 'What was Florence Nightingale famous for?',
+        correctAnswer: 'Being a nurse 護士（現代護理之母）',
+        wrongAnswer: 'Being a poet 詩人',
+        explanation: 'Florence Nightingale 是護士，現代護理之母，不是詩人。',
+      },
+      {
+        question: 'Who wrote Oliver Twist?',
+        correctAnswer: 'Charles Dickens',
+        wrongAnswer: 'Shakespeare',
+        explanation: 'Oliver Twist 是 Charles Dickens 寫的，不是 Shakespeare。',
+      },
+      {
+        question: 'When is Boxing Day?',
+        correctAnswer: '26 December (12月26日)',
+        wrongAnswer: '25 December',
+        explanation: 'Boxing Day 是 12 月 26 日，聖誕節後一天。',
+      },
     ],
     blocks: [
       {
@@ -1016,6 +1130,18 @@ export const sections: Section[] = [
         correctAnswer: 'True — 北愛爾蘭和蘇格蘭都有自己的紙幣',
         wrongAnswer: 'False',
         explanation: '北愛爾蘭和蘇格蘭都有權發行自己的紙幣，這些紙幣在全英國都是有效的。',
+      },
+      {
+        question: 'What is the capital of Northern Ireland?',
+        correctAnswer: 'Belfast',
+        wrongAnswer: 'Dublin',
+        explanation: '北愛爾蘭的首都是 Belfast，不是 Dublin。Dublin 是愛爾蘭共和國（Republic of Ireland）的首都。',
+      },
+      {
+        question: 'How many members does the Welsh Parliament (Senedd) have?',
+        correctAnswer: '60 MSs',
+        wrongAnswer: '90 MSs',
+        explanation: '威爾士議會有 60 位議員（MSs），不是 90。90 是北愛爾蘭議會（MLAs）的人數。',
       },
     ],
     blocks: [

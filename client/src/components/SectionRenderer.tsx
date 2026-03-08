@@ -211,7 +211,7 @@ function WrongQuestionBlock({ questions }: { questions: WrongQuestion[] }) {
   );
 }
 
-export function SectionRenderer({ section, searchQuery }: { section: Section; searchQuery?: string }) {
+export function SectionRenderer({ section, searchQuery, showWrongQuestions = true }: { section: Section; searchQuery?: string; showWrongQuestions?: boolean }) {
   const { lang } = useLanguage();
   const t = (key: keyof typeof translations) => translations[key][lang];
 
@@ -260,7 +260,7 @@ export function SectionRenderer({ section, searchQuery }: { section: Section; se
       </div>
 
       {/* Wrong Questions Alert — shown FIRST for maximum visibility */}
-      {hasWrongQuestions && (
+      {hasWrongQuestions && showWrongQuestions && (
         <div className="px-5 pt-4">
           <WrongQuestionBlock questions={section.wrongQuestions!} />
         </div>

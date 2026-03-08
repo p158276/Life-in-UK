@@ -74,6 +74,12 @@ export const translations = {
   masteredCards: { zh: "已掌握", en: "Mastered" },
   toReview: { zh: "待複習", en: "To Review" },
 
+  // Wrong questions toggle
+  showWrongQ: { zh: "顯示易錯題", en: "Show Wrong Qs" },
+  hideWrongQ: { zh: "隱藏易錯題", en: "Hide Wrong Qs" },
+  wrongQToggleOn: { zh: "易錯題已顯示", en: "Wrong Qs Visible" },
+  wrongQToggleOff: { zh: "易錯題已隱藏", en: "Wrong Qs Hidden" },
+
   // Language toggle
   langLabel: { zh: "EN", en: "中" },
   langTooltip: { zh: "Switch to English", en: "切換為中文" },

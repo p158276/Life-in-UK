@@ -36,6 +36,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [showWrongQuestions, setShowWrongQuestions] = useState(true);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const { lang } = useLanguage();
@@ -144,6 +145,20 @@ export default function Home() {
                 style={{ borderColor: 'rgba(200,169,110,0.3)', color: '#FAF8F5' }}
               />
             </div>
+            {/* Wrong Questions Toggle */}
+            <button
+              onClick={() => setShowWrongQuestions(!showWrongQuestions)}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs rounded-md transition-all hover:scale-105 border"
+              style={{
+                backgroundColor: showWrongQuestions ? 'rgba(185,28,28,0.15)' : 'rgba(255,255,255,0.05)',
+                borderColor: showWrongQuestions ? 'rgba(185,28,28,0.4)' : 'rgba(200,169,110,0.3)',
+                color: showWrongQuestions ? '#FCA5A5' : 'rgba(250,248,245,0.6)',
+              }}
+              title={showWrongQuestions ? t('hideWrongQ') : t('showWrongQ')}
+            >
+              <AlertTriangle size={13} />
+              <span className="hidden md:inline">{showWrongQuestions ? t('hideWrongQ') : t('showWrongQ')}</span>
+            </button>
             <Link href="/flashcards">
               <span className="flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md transition-all hover:scale-105" style={{ backgroundColor: '#C8A96E', color: '#1B2A4A', fontWeight: 600 }}>
                 <Brain size={15} />
@@ -299,7 +314,7 @@ export default function Home() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: Math.min(idx * 0.05, 0.3) }}
               >
-                <SectionRenderer section={section} searchQuery={searchQuery} />
+                <SectionRenderer section={section} searchQuery={searchQuery} showWrongQuestions={showWrongQuestions} />
               </motion.div>
             ))}
 

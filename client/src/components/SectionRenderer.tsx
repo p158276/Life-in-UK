@@ -3,6 +3,7 @@
  * Renders each study section with tables, memos, text blocks, and WRONG QUESTION alerts
  * Navy (#1B2A4A) + Gold (#C8A96E) + Cream (#FAF8F5) + Alert Red (#B91C1C)
  * Bilingual: Chinese / English
+ * Toggle: showWrongQuestions controls visibility of ⚠️ markers, parenthetical hints, and wrong question blocks
  */
 
 import { Section, ContentBlock, WrongQuestion } from "@/lib/studyData";
@@ -10,6 +11,29 @@ import { AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/i18n";
+
+/**
+ * Strip ⚠️ markers and parenthetical warning hints from cell text.
+ * Examples:
+ *   "⚠️ **1918**" → "**1918**"
+ *   "因為**一戰 WWI** 女性貢獻（不是內戰 Civil War！）" → "因為**一戰 WWI** 女性貢獻"
+ *   "⚠️ **Tower of London**" → "**Tower of London**"
+ *   "**威廉一世 William the Conqueror 建**（不是 Elizabeth I！錯了2次）" → "**威廉一世 William the Conqueror 建**"
+ */
+function stripWarningMarkers(text: string): string {
+  // Remove ⚠️ emoji (with optional trailing space)
+  let cleaned = text.replace(/⚠️\s*/g, '');
+  // Remove parenthetical hints in full-width or half-width brackets containing warning keywords
+  cleaned = cleaned.replace(/[（(][^）)]*(?:不是|不要|錯了|NOT |not |注意|你答了|正確答案|沒有|易錯|記住|小心)[^）)]*[）)]/g, '');
+  // Remove standalone warning phrases NOT in brackets: e.g. "不是打敗羅馬人！" or "不是 St Augustine！..."
+  // These appear as trailing text starting with 不是/NOT followed by content ending with ！or !
+  cleaned = cleaned.replace(/不是[^；;。\n]*[！!]/g, '');
+  // Remove "Wales 沒有國教" style trailing notes after semicolons that are warnings
+  cleaned = cleaned.replace(/[；;]\s*(?:不是|不要|錯了|你答了|正確答案)[^；;]*/g, '');
+  // Clean up any trailing whitespace, semicolons, or orphaned separators
+  cleaned = cleaned.replace(/[；;]\s*$/, '').replace(/\s+$/, '').trim();
+  return cleaned;
+}
 
 function highlightBold(text: string, searchQuery?: string): React.JSX.Element {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
@@ -45,7 +69,7 @@ function highlightBold(text: string, searchQuery?: string): React.JSX.Element {
   );
 }
 
-function TableBlock({ table, searchQuery }: { table: NonNullable<ContentBlock['table']>; searchQuery?: string }) {
+function TableBlock({ table, searchQuery, showWrongQuestions = true }: { table: NonNullable<ContentBlock['table']>; searchQuery?: string; showWrongQuestions?: boolean }) {
   return (
     <div className="overflow-x-auto rounded-lg border" style={{ borderColor: 'rgba(200,169,110,0.25)' }}>
       <table className="w-full text-sm">
@@ -72,11 +96,14 @@ function TableBlock({ table, searchQuery }: { table: NonNullable<ContentBlock['t
                 borderBottom: '1px solid rgba(200,169,110,0.12)',
               }}
             >
-              {row.cells.map((cell, ci) => (
-                <td key={ci} className="px-3 py-2.5 leading-relaxed" style={{ color: '#2a2a3a' }}>
-                  {highlightBold(cell, searchQuery)}
-                </td>
-              ))}
+              {row.cells.map((cell, ci) => {
+                const displayText = showWrongQuestions ? cell : stripWarningMarkers(cell);
+                return (
+                  <td key={ci} className="px-3 py-2.5 leading-relaxed" style={{ color: '#2a2a3a' }}>
+                    {highlightBold(displayText, searchQuery)}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>
@@ -85,7 +112,8 @@ function TableBlock({ table, searchQuery }: { table: NonNullable<ContentBlock['t
   );
 }
 
-function MemoBlock({ content, searchQuery }: { content: string; searchQuery?: string }) {
+function MemoBlock({ content, searchQuery, showWrongQuestions = true }: { content: string; searchQuery?: string; showWrongQuestions?: boolean }) {
+  const displayContent = showWrongQuestions ? content : stripWarningMarkers(content);
   return (
     <div
       className="rounded-lg p-4 border-l-4 relative"
@@ -98,16 +126,17 @@ function MemoBlock({ content, searchQuery }: { content: string; searchQuery?: st
         💡
       </div>
       <p className="text-sm leading-relaxed italic pl-2" style={{ color: '#3a3a4a' }}>
-        {highlightBold(content, searchQuery)}
+        {highlightBold(displayContent, searchQuery)}
       </p>
     </div>
   );
 }
 
-function TextBlock({ content, searchQuery }: { content: string; searchQuery?: string }) {
+function TextBlock({ content, searchQuery, showWrongQuestions = true }: { content: string; searchQuery?: string; showWrongQuestions?: boolean }) {
+  const displayContent = showWrongQuestions ? content : stripWarningMarkers(content);
   return (
     <p className="text-sm leading-relaxed" style={{ color: '#3a3a4a' }}>
-      {highlightBold(content, searchQuery)}
+      {highlightBold(displayContent, searchQuery)}
     </p>
   );
 }
@@ -230,8 +259,8 @@ export function SectionRenderer({ section, searchQuery, showWrongQuestions = tru
       className="rounded-xl overflow-hidden shadow-sm border"
       style={{
         backgroundColor: '#FDFCFA',
-        borderColor: hasWrongQuestions ? 'rgba(185,28,28,0.25)' : 'rgba(200,169,110,0.2)',
-        boxShadow: hasWrongQuestions ? '0 0 0 1px rgba(185,28,28,0.08), 0 2px 8px rgba(185,28,28,0.06)' : undefined,
+        borderColor: hasWrongQuestions && showWrongQuestions ? 'rgba(185,28,28,0.25)' : 'rgba(200,169,110,0.2)',
+        boxShadow: hasWrongQuestions && showWrongQuestions ? '0 0 0 1px rgba(185,28,28,0.08), 0 2px 8px rgba(185,28,28,0.06)' : undefined,
       }}
     >
       {/* Section Header */}
@@ -245,7 +274,7 @@ export function SectionRenderer({ section, searchQuery, showWrongQuestions = tru
             >
               {section.number}. {section.title}
             </h2>
-            {hasWrongQuestions && (
+            {hasWrongQuestions && showWrongQuestions && (
               <span
                 className="text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1"
                 style={{ backgroundColor: 'rgba(185,28,28,0.1)', color: '#B91C1C' }}
@@ -256,7 +285,7 @@ export function SectionRenderer({ section, searchQuery, showWrongQuestions = tru
             )}
           </div>
         </div>
-        <div className="w-1 h-8 rounded-full flex-shrink-0" style={{ backgroundColor: hasWrongQuestions ? '#B91C1C' : catColor }} />
+        <div className="w-1 h-8 rounded-full flex-shrink-0" style={{ backgroundColor: hasWrongQuestions && showWrongQuestions ? '#B91C1C' : catColor }} />
       </div>
 
       {/* Wrong Questions Alert — shown FIRST for maximum visibility */}
@@ -285,11 +314,11 @@ export function SectionRenderer({ section, searchQuery, showWrongQuestions = tru
                 </h3>
               );
             case 'table':
-              return block.table ? <TableBlock key={i} table={block.table} searchQuery={searchQuery} /> : null;
+              return block.table ? <TableBlock key={i} table={block.table} searchQuery={searchQuery} showWrongQuestions={showWrongQuestions} /> : null;
             case 'memo':
-              return block.content ? <MemoBlock key={i} content={block.content} searchQuery={searchQuery} /> : null;
+              return block.content ? <MemoBlock key={i} content={block.content} searchQuery={searchQuery} showWrongQuestions={showWrongQuestions} /> : null;
             case 'text':
-              return block.content ? <TextBlock key={i} content={block.content} searchQuery={searchQuery} /> : null;
+              return block.content ? <TextBlock key={i} content={block.content} searchQuery={searchQuery} showWrongQuestions={showWrongQuestions} /> : null;
             default:
               return null;
           }

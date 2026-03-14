@@ -181,6 +181,48 @@ export const sections: Section[] = [
         wrongAnswer: 'Free primary education in England, Wales and Scotland',
         explanation: 'Butler Act 1944 引入的是英格蘭和威爾士的免費中等教育 secondary education，不是初等教育，也不包括蘇格蘭。',
       },
+      {
+        question: 'What food shortage caused the famine in Ireland?',
+        correctAnswer: 'Potato 馬鈴薯',
+        wrongAnswer: 'Corn 玉米',
+        explanation: '愛爾蘭大饑荒是因為馬鈴薯歉收（potato crop failed），一百萬人死亡。',
+      },
+      {
+        question: 'Why were canals built during the Industrial Revolution?',
+        correctAnswer: 'To link factories to towns, cities and ports',
+        wrongAnswer: 'To make space for the large fleet of British ships',
+        explanation: '工業革命時期修建運河是為了連接工廠到城鎮和港口，方便運輸貨物。',
+      },
+      {
+        question: 'Who fought in the English Civil War of 1642?',
+        correctAnswer: 'The Cavaliers and the Roundheads',
+        wrongAnswer: 'The House of York and the House of Lancaster',
+        explanation: '1642 內戰是 Cavaliers（保皇派）vs Roundheads（國會派）。York vs Lancaster 是玫瑰之戰（1455）。',
+      },
+      {
+        question: 'When was England ruled as a republic?',
+        correctAnswer: 'After Charles I was executed',
+        wrongAnswer: 'When Magna Carta restricted the king\'s power',
+        explanation: '查理一世被處死後英格蘭成為共和國（Commonwealth），由 Cromwell 統治。Magna Carta 只是限制王權。',
+      },
+      {
+        question: 'When did the First World War end?',
+        correctAnswer: 'At 11am on 11th November 1918',
+        wrongAnswer: 'At 11am on 11th November 1914',
+        explanation: 'WWI 在 1918 年 11 月 11 日上午 11 時結束（11.11.11）。1914 年是開始，不是結束！',
+      },
+      {
+        question: 'What is the name of Irish people who favoured complete independence from the UK?',
+        correctAnswer: 'Fenians',
+        wrongAnswer: 'Suffragettes',
+        explanation: 'Fenians 是支持愛爾蘭完全獨立的人。Suffragettes 是爭取女性投票權的運動。',
+      },
+      {
+        question: 'When was the United Nations set up?',
+        correctAnswer: 'After the Second World War',
+        wrongAnswer: 'Before the Second World War',
+        explanation: '聯合國是二戰後成立的，不是二戰前。',
+      },
     ],
     blocks: [
       {
@@ -366,6 +408,12 @@ export const sections: Section[] = [
         wrongAnswer: 'The Reformed Version',
         explanation: 'King James 聖經 = King James Version = Authorised Version，不是 Reformed Version。',
       },
+      {
+        question: 'Which monarch returned from the Netherlands to become king after Cromwell died?',
+        correctAnswer: 'Charles II',
+        wrongAnswer: 'William II',
+        explanation: '從荷蘭回來復辟的是 Charles II。William of Orange = William III，不是 William II。',
+      },
     ],
     blocks: [
       {
@@ -409,6 +457,18 @@ export const sections: Section[] = [
         correctAnswer: '10 Downing Street',
         wrongAnswer: 'Buckingham Palace',
         explanation: '首相官邸是 10 Downing Street，白金漢宮 Buckingham Palace 是君主住的。',
+      },
+      {
+        question: 'Who was the longest serving PM in the 20th century?',
+        correctAnswer: 'Margaret Thatcher (1979-1990)',
+        wrongAnswer: 'Sir Alec Douglas-Home',
+        explanation: 'Margaret Thatcher 是 20 世紀任期最長的首相（1979-1990）。',
+      },
+      {
+        question: 'Who became Prime Minister after the 1945 election?',
+        correctAnswer: 'Clement Attlee',
+        wrongAnswer: 'Winston Churchill',
+        explanation: '1945 年選舉是 Attlee（工黨）贏了，不是 Churchill。Churchill 是戰時首相但 1945 選舉輸了。',
       },
     ],
     blocks: [
@@ -532,6 +592,18 @@ export const sections: Section[] = [
         wrongAnswer: 'The 40 days after Christmas',
         explanation: 'Lent 是復活節前的 40 天齋期，不是聖誕節後 40 天。',
       },
+      {
+        question: 'When is Hogmanay celebrated?',
+        correctAnswer: '31st December (12月31日)',
+        wrongAnswer: '1st January (1月1日)',
+        explanation: 'Hogmanay 是蘇格蘭的除夕慶祝，是 12 月 31 日（不是 1 月 1 日！）',
+      },
+      {
+        question: 'What song is sung at New Year?',
+        correctAnswer: 'Auld Lang Syne',
+        wrongAnswer: 'Jingle Bells',
+        explanation: '新年唱的歌是 Auld Lang Syne，不是 Jingle Bells（聖誕歌）。',
+      },
     ],
     blocks: [
       {
@@ -590,6 +662,12 @@ export const sections: Section[] = [
         wrongAnswer: 'The Civil War 內戰',
         explanation: '1918 年女性獲得投票權是因為一戰期間的貢獻，不是內戰。',
       },
+      {
+        question: 'What did the Factories Act 1847 limit?',
+        correctAnswer: 'Working hours for women and children to 10 hours per day',
+        wrongAnswer: 'Working hours for everybody',
+        explanation: 'Factories Act 1847 限制的是女性和兒童的工作時間，不是所有人。',
+      },
     ],
     blocks: [
       {
@@ -632,6 +710,18 @@ export const sections: Section[] = [
         wrongAnswer: 'Inventing the telephone',
         explanation: 'Isaac Newton 是科學家，以發現萬有引力（gravity）聞名。',
       },
+      {
+        question: 'What was William Wilberforce?',
+        correctAnswer: 'A politician who campaigned for the abolition of slavery',
+        wrongAnswer: 'A poet',
+        explanation: 'William Wilberforce 是政治家（politician），推動廢除奴隸制，不是詩人。',
+      },
+      {
+        question: 'What was David Hume\'s contribution?',
+        correctAnswer: 'Philosophy 哲學',
+        wrongAnswer: 'Architecture 建築',
+        explanation: 'David Hume 是啟蒙運動的哲學家（philosopher），不是建築師。',
+      },
     ],
     blocks: [
       {
@@ -660,6 +750,32 @@ export const sections: Section[] = [
     titleEn: 'Literature, Arts & Film',
     icon: '🎭',
     category: 'culture',
+    wrongQuestions: [
+      {
+        question: 'Who wrote MacBeth?',
+        correctAnswer: 'William Shakespeare',
+        wrongAnswer: 'Geoffrey Chaucer',
+        explanation: 'MacBeth 是 Shakespeare 的劇。Canterbury Tales 才是 Chaucer 的作品。',
+      },
+      {
+        question: 'Which two bands were part of the Swinging Sixties?',
+        correctAnswer: 'The Beatles and The Rolling Stones',
+        wrongAnswer: 'The Beatles and ABBA',
+        explanation: 'Swinging Sixties 的兩個樂隊是 Beatles 和 Rolling Stones。ABBA 是瑞典的！',
+      },
+      {
+        question: 'Which actress has NOT won an Oscar?',
+        correctAnswer: 'Emily Watson',
+        wrongAnswer: 'Dame Judi Dench',
+        explanation: 'Emily Watson 未獲 Oscar。Judi Dench 已獲 Oscar。',
+      },
+      {
+        question: 'Which is one of the most commercially successful UK film series?',
+        correctAnswer: 'Harry Potter',
+        wrongAnswer: 'The Lord of the Rings',
+        explanation: 'Harry Potter 是 UK 最商業成功的電影之一。LOTR 是最受歡迎但不是 UK 最高收入。',
+      },
+    ],
     blocks: [
       {
         type: 'subsection',
@@ -831,6 +947,30 @@ export const sections: Section[] = [
         wrongAnswer: 'Football 足球',
         explanation: 'Lord\'s 是板球場（Cricket Ground），不是足球場，位於倫敦。',
       },
+      {
+        question: 'Where is Skara Brae located?',
+        correctAnswer: 'Scotland (Orkney Islands)',
+        wrongAnswer: 'Wales',
+        explanation: 'Skara Brae 位於蘇格蘭的 Orkney 群島，是歐洲北部保存最好的史前村落。',
+      },
+      {
+        question: 'Where is Crathes Castle?',
+        correctAnswer: 'Scotland',
+        wrongAnswer: 'Wales (Caernarfon)',
+        explanation: 'Crathes Castle 在 Scotland。Caernarfon Castle 才在 Wales。',
+      },
+      {
+        question: 'Which forts are on Hadrian\'s Wall?',
+        correctAnswer: 'Housesteads and Vindolanda',
+        wrongAnswer: 'Grimsby',
+        explanation: 'Hadrian\'s Wall 上的堡壘是 Housesteads 和 Vindolanda。Grimsby 是城鎮，不是堡壘。',
+      },
+      {
+        question: 'Where is the National Horseracing Museum?',
+        correctAnswer: 'Newmarket, Suffolk',
+        wrongAnswer: 'St Andrews',
+        explanation: 'National Horseracing Museum 在 Newmarket, Suffolk。St Andrews 是高爾夫球場。',
+      },
     ],
     blocks: [
       {
@@ -887,6 +1027,12 @@ export const sections: Section[] = [
         wrongAnswer: 'Northern Ireland',
         explanation: 'Swansea 位於 Wales，不是 Northern Ireland。',
       },
+      {
+        question: 'What are the Channel Islands and Isle of Man known as?',
+        correctAnswer: 'Crown Dependencies',
+        wrongAnswer: 'British Colonies',
+        explanation: 'Channel Islands 和 Isle of Man 叫 Crown Dependencies，不是 British Colonies。它們 linked to UK 但 not part of UK。',
+      },
     ],
     blocks: [
       {
@@ -928,6 +1074,37 @@ export const sections: Section[] = [
         correctAnswer: 'Health and Education 衛生和教育',
         wrongAnswer: 'Defence and Social security',
         explanation: '分權行政部門可以立法管理衛生和教育。國防和社會保障歸中央政府管。',
+      },
+      {
+        question: 'What is the Shadow Cabinet?',
+        correctAnswer: 'Senior opposition MPs chosen by the leader of the opposition',
+        wrongAnswer: 'Roundheads / Civil servants',
+        explanation: 'Shadow Cabinet 是反對黨領袖任命的資深 MPs 組成。不是 Roundheads（內戰）也不是 Civil servants。',
+        timesWrong: 2,
+      },
+      {
+        question: 'What does the monarch appoint?',
+        correctAnswer: 'The government 政府',
+        wrongAnswer: 'The cabinet 內閣',
+        explanation: '君主任命政府（government）。Cabinet 是由 PM 任命的。',
+      },
+      {
+        question: 'What is Hansard?',
+        correctAnswer: 'The official record of parliamentary debates',
+        wrongAnswer: 'Canvassing',
+        explanation: 'Hansard 是議會辦論的官方記錄。Canvassing 是拉票。',
+      },
+      {
+        question: 'How many times has the UK hosted the Olympic Games?',
+        correctAnswer: '3 times (1908, 1948, 2012)',
+        wrongAnswer: '5 times',
+        explanation: 'UK 舉辦過 3 次奧運（1908, 1948, 2012），不是 5 次。',
+      },
+      {
+        question: 'Who hears cases in the Youth Court?',
+        correctAnswer: 'Up to 3 trained magistrates or a District Judge',
+        wrongAnswer: 'A Sheriff',
+        explanation: 'Youth Court 由最多 3 名受訓治安法官或 1 名 District Judge 審理。Sheriff 只在蘇格蘭。',
       },
     ],
     blocks: [
@@ -1170,6 +1347,20 @@ export const sections: Section[] = [
     titleEn: 'Age Requirements',
     icon: '🎂',
     category: 'society',
+    wrongQuestions: [
+      {
+        question: 'At what age can you participate in the National Citizen Service?',
+        correctAnswer: '16-17 years old',
+        wrongAnswer: '17-18 years old',
+        explanation: 'National Citizen Service 是 16-17 歲可以參加，不是 17-18 歲。',
+      },
+      {
+        question: 'At what age can you ride a motorcycle?',
+        correctAnswer: '17 years old',
+        wrongAnswer: '18 years old',
+        explanation: '17 歲可以騎摩托車（motorcycle）。不是 18 歲。',
+      },
+    ],
     blocks: [
       {
         type: 'table',
